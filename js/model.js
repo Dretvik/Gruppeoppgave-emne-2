@@ -2,58 +2,72 @@
 
 const model = {
     app: {
-        loggedInUser: null,
+        loggedInUser: [],
         currentPage: 'loginPage',
-        displayMode: 'cinema',
-        language: 'no',
-        menu: ['','',],
-
+        cinemaMode: true,
+        pages: [
+            'loginPage',
+            'homePage',
+            'profilePage',
+            'moviePage',
+            'searchPage',
+        ],
     },
     inputs: {
-        rateNewMovie: '',
+        rateNewMovie: null,
         user: {
+            id: null, 
             userName: '',
             password: '',
-            registration: '',
-            forgotPassword: '',
+            emailAdress: '',
+            favGenre: [],
+            favMovies: [],
+            myRatedMovies: [],
+            aboutMe: '',
         },
         search: '',
-        filter: '',
+        //nice to have filter: [],
     },
     //Data
     data: {
-        user: {
-            userName: 'Martin',
-            password: 'Passord',
-            registration: '',
-            forgotPassword: 'Fyll inn e-mail',
-            favoritegenre: ['','',],
-            favoritefilms: ['','',],
+        search: '',
+        //nice to have filter: [''],
+        users:[
+            {
+                id: 1,
+                userName: 'Martini',
+                password: 'shaken',
+                emailAdress: 'martini@getacademy.no',
+                favGenre: ['Adventure','Fantasy',],
+                favMovies: ['The Dukes of Hazzard','The Grudge (2004)',],
+                myRatedMovies: ['The Dukes of Hazzard','The Grudge (2004)',],
+                aboutMe: 'Jeg liker Martini!',
+                // newlyRated: [
+                //     id, 'The Dukes of Hazzard', 
+                //     id, 'The Grudge (2004)',
+                //   ],       
+            },
+        ], 
+        genre: [],
 
-        },
-        newlyRated: [
-          'The Dukes of Hazzard', 
-          'The Grudge (2004)',
-        ],
         highestRated: [
           'The Dukes of Hazzard', 
           'The Grudge (2004)',
-        ],
-        
+        ],       
         movies: [
-            {
-                id: 1,
-                title: '',
-                releaseDate: '',
-                cover: '',
-                duration: '',
-                description: "",
-                overallRating: '',
-                personalRating: '',
-                genre: [''],
-                directors: [''],
-                staringActors: [''],
-            },
+            // {
+            //     id: 1,
+            //     title: '',
+            //     releaseDate: '',
+            //     cover: '',
+            //     duration: '',
+            //     description: "",
+            //     overallRating: '',
+            //     personalRating: '',
+            //     genre: [''],
+            //     directors: [''],
+            //     staringActors: [''],
+            // },
             {
                 id: 2,
                 title: 'The Dukes of hazzard',
