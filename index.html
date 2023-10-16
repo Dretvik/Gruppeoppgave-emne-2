@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TurtleMovies</title>
-    <link rel="stylesheet" type="text/css" href="./styles/style.css">
     <style>
         
     </style>
 </head>
-<body onload="updateView()">
+<body onload="loginPageView()">
     <div id="app"></div>
 
-    <script src="js/model.js"></script>
-    <script src="js/controller.js"></script>
-    <script src="js/view.js"></script>
-    </script>
+    <script src="model.js"></script>
+
+    <script src="./pages/loginPage/loginPageView.js"></script>
+    <script src="./pages/loginPage/loginPageController.js"></script>
+
+    <script src="./pages/registrationPage/registrationPageView.js"></script>
+    <script src="./pages/registrationPage/registrationPageController.js"></script>
+
+    <script src="./pages/mainPage/mainPageView.js"></script>
+    <script src="./pages/mainPage/mainPageController.js"></script>
 </body>
 </html>

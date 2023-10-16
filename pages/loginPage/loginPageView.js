@@ -1,8 +1,4 @@
-//View
-
-updateView();
-
-function updateView() {
+function loginPageView(){
     document.getElementById('app').innerHTML = /*HTML*/`
-     `;
+    `;
 }
