@@ -9,6 +9,11 @@ function registrationPageView() {
         </p>
 
         <p>
+            <label for="newUserEmail">E-mail: </label>
+            <input type="email" id="newEmail">
+        </p>
+
+        <p>
             <label for="newPasswordInput">Password: </label>
             <input type="text" id="newPassword">
         </p>
