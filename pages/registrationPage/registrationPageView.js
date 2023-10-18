@@ -1,7 +1,6 @@
 function registrationPageView() {
-    // TOR: Is it ok to use form here?
     document.getElementById('app').innerHTML = /*HTML*/`
-    <form id="registerUser">
+    <div id="registerUser">
         <h3>Create an account</h3>
         <p>
             <label for="newUsernameInput">Username: </label>
@@ -18,7 +17,7 @@ function registrationPageView() {
             <input type="text" id="newPassword">
         </p>
 
-        <button type="submit" id="submitButton">Register</button>
-    </form>
+        <button onclick="registerUser()" id="submitButton">Register</button>
+    </div>
     `;
 }
