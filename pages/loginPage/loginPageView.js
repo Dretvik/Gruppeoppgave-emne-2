@@ -10,7 +10,7 @@ function loginPageView() {
         <label for="password"> Password:</label>
         <input type="text" id="password" placeholder="Fill in your password">
     </div>
-        <button onclick="login()">Log in</button>
+        <button onclick="userLogin()">Log in</button>
         <button onclick="registrationPageView()">Register user</button>
         <button onclick="forgotPassword()">Forgot password?</button>
     <div id="errorMessage"></div>

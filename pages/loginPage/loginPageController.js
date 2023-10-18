@@ -13,8 +13,9 @@ function userLogin() {
                 mainPageView();
                 return true;
         }
+    }
     alert("You shall not pass");
-     }
+    return;
     }
     
     //espen
