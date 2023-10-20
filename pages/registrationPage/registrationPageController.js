@@ -1,7 +1,7 @@
-function registerUser() {
-    const username = document.getElementById('newUsername');
-    const password = document.getElementById('newPassword');
-    const email = document.getElementById('newEmail');
+ function registerUser() {
+    const username = document.getElementById('newUsername').value;
+    const password = document.getElementById('newPassword').value;
+    const email = document.getElementById('newEmail').value;
 
 if (email.includes("@")) {
     const newUser = {
@@ -10,8 +10,8 @@ if (email.includes("@")) {
         emailAdress: email,
     };
 
-    model.data.username.push(newUser);
-    loginpageview();
+    model.data.users.push(newUser);
+    loginPageView();
     } else {
      alert("Please enter valid email address.")
     }
