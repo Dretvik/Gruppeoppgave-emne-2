@@ -1,8 +1,5 @@
 function mainPageView(){
-<<<<<<< Updated upstream
     document.getElementById('app').innerHTML = menuButtonAndSearchBar + /*HTML*/`
-=======
-    document.getElementById('app').innerHTML = /*HTML*/`
     <div id="mainContainer">
     <input type="radio" name="position" checked />
     <input type="radio" name="position" />
@@ -17,6 +14,6 @@ function mainPageView(){
       <div class="item"><img src="${model.data.movies[4].cover}"></div>
       </main>
     </div>
->>>>>>> Stashed changes
+
     `;
 }
