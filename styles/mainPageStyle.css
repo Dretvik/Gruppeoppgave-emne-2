@@ -55,6 +55,7 @@ div.item img {
 input[type="radio"] {
     position: relative;
     z-index: 8; 
+    top: 130px;
 }
 
   
@@ -81,7 +82,7 @@ input[type="radio"] {
   
   input:nth-of-type(1) {
     grid-column: 2 / 3;
-    grid-row: 4 / 5;
+    grid-row: 2 / 3;
   }
   input:nth-of-type(1):checked ~ main#carousel {
     --position: 1;
