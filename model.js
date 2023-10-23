@@ -1,5 +1,6 @@
 //Model
 const menuButtonAndSearchBar = /*HTML*/`
+    <h1>Turtle Movies</h1>
     <div class="dropdown">
     <button class="dropbtn">Menu</button>
     <div class="dropdown-content">
