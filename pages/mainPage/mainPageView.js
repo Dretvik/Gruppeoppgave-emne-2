@@ -1,4 +1,4 @@
 function mainPageView(){
-    document.getElementById('app').innerHTML = /*HTML*/`
+    document.getElementById('app').innerHTML = menuButtonAndSearchBar + /*HTML*/`
     `;
 }

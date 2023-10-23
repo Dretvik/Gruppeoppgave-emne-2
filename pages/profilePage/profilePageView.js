@@ -1,6 +1,6 @@
 function profilePageView () {
 const user = model.app.loggedInUser;
-document.getElementById('app').innerHTML = /*HTML*/`
+document.getElementById('app').innerHTML = menuButtonAndSearchBar + /*HTML*/`
 <div id="profilePageContainer">
     <div class="profileInfo">
         <img class="profilePicture" src="${user.profileImage || 'emptyUser.jpg'}" alt="Profile Picture">

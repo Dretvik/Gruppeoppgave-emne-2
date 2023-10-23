@@ -1,4 +1,88 @@
 body {
     background-color: black;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
+/* Dropdown Menu CSS settings */
+
+/* Style for the dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Style for the main menu button */
+  .dropbtn {
+    background-color: #3498db;
+    color: white;
+    box-shadow: 2px 1px orange;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 40px;
+    left: 40px;
+  }
+  
+  /* Style for the dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2e2e2e;
+    min-width: 160px;
+    left: 40;
+    top: 40;
+  } 
+  
+  /* Style for dropdown content buttons */
+  .dropdown-content button {
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-top:  1px solid black;
+    border-bottom:  1px solid black;
+  }
+  
+  /* Show the dropdown content when the main menu button is hovered over */
+  .dropdown:hover .dropdown-content {
+    display: block;
+    position: fixed;
+    background-color: antiquewhite;
+    top: 75px;
+    left: 40px;
+    border: 1px solid black;
+  }
+  .downbar-content .downbar-buttons:hover{
+    background-color: black;
+  }
+  
+  /* Style for Search Div*/
+  .searchDiv{
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    /* This color are transparent! */
+    background-color: #1C00ff00;
+  }
+  .searchButton{
+    background-color: #3498db;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  #searchInput{
+    padding: 10px;
+  }

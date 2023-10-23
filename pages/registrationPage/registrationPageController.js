@@ -8,6 +8,11 @@ if (email.includes("@")) {
         userName: username,
         password: password,
         emailAdress: email,
+        favGenre: [],
+        favMovies: [],
+        myRatedMovies: [],
+        aboutMe: '',
+        profileImage: './img/profileImages/emptyUser.jpg',
     };
 
     model.data.users.push(newUser);
