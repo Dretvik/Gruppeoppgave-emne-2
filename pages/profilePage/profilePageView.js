@@ -10,15 +10,15 @@ document.getElementById('app').innerHTML = menuButtonAndSearchBar + /*HTML*/`
         <h2>About ${user.userName}, ${user.aboutMe}</h2>
     </div>
     <div>
-        <h2> My favourite movies</h2>
+        <h2> My favourite movies:</h2>
         <div id="favMoviesProfilePage"> ${user.favMovies}</div>
     </div>
     <div>
-        <h2>My rated movies</h2>
+        <h2>My rated movies:</h2>
         <div id="ratedMoviesProfilePage"> ${user.myRatedMovies}</div>
     </div>
     <div> 
-        <h2>Favourite genre</h2>
+        <h2>Favourite genre:</h2>
         <div id="favGenreProfilePage"> ${user.favGenre}</div>
     </div>
 
