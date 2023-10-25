@@ -36,6 +36,7 @@ const model = {
         rateNewMovie: null,
         user: {
             id: null, 
+            displayName: '',
             userName: '',
             password: '',
             emailAdress: '',
@@ -55,7 +56,8 @@ const model = {
         users:[
             {
                 id: 1,
-                userName: 'Martini',
+                displayName: 'Martini',
+                userName: 'Martin',
                 password: 'shaken',
                 emailAdress: 'martini@getacademy.no',
                 favGenre: ['Adventure','Fantasy',],
@@ -67,6 +69,7 @@ const model = {
             },
             {
                 id: 2, 
+                displayName: '',
                 userName: '',
                 password: '',
                 emailAdress: 'dummmyBruker@hotmail.com',
@@ -78,6 +81,7 @@ const model = {
             },
             {
                 id: 3, 
+                displayName: 'Ellie',
                 userName: 'Ellie',
                 password: '1234',
                 emailAdress: 'elliemarie@getacademy.no',
@@ -89,6 +93,7 @@ const model = {
             },
             {
                 id: 4, 
+                displayName: 'Espen',
                 userName: 'Espen',
                 password: '1234',
                 emailAdress: 'espenh@getacademy.no',
@@ -100,6 +105,7 @@ const model = {
             },
             {
                 id: 5, 
+                displayName: 'Ellen',
                 userName: 'Ellen',
                 password: '1234',
                 emailAdress: 'ellenbirgittea@getacademy.no',
@@ -111,6 +117,7 @@ const model = {
             },
             {
                 id: 6, 
+                displayName: 'Markus',
                 userName: 'Markus',
                 password: '1234',
                 emailAdress: 'markus@getacademy.no',
@@ -122,6 +129,7 @@ const model = {
             },
             {
                 id: 7, 
+                displayName: 'Tor',
                 userName: 'Tor',
                 password: '1234',
                 emailAdress: 'toralver@getacademy.no',

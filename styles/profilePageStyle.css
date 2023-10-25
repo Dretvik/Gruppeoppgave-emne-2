@@ -1,0 +1,56 @@
+#profilePageContainer {
+    display:grid;
+    grid-template-areas: 
+    "a b"
+    ;
+}
+
+.editProfileButtons {
+    background-color: #3498db;
+    color: white;
+    box-shadow: 2px 1px orange;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 40px;
+    left: 110px;
+}
+.editProfileButtons:hover {
+    background-color: tomato;
+}
+
+.profilePicture{
+    width: 40%;
+}
+.favMovieList {
+    list-style: none;
+}
+.personalInfoContainers{
+    width: 50vw;
+    word-wrap: break-word;
+    color: tomato;
+    font-size: 17px;
+}
+.editProfileInputs{
+    height: 40px;
+}
+#editProfileDescriptionInput{
+    width: 40%;
+    height: 100px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+#editFavMoviesProfilePage{
+    height: 150px;
+    overflow: auto;
+    text-align: start;
+}
+.usernameProfilePage{
+    color: red;
+}
