@@ -35,14 +35,14 @@
 }
 .movieCardsLoginPage{
     border: 1px solid white;
-    width: 180px;
-    height: 400px;
+    width: 200px;
+    height: 450px;
     text-align: center;
     cursor: pointer;
     background-color: rgb(43, 43, 43);
 }
 .topFourMovieTitles{
-    height: 40px;
+    height: 80px;
 }
 .coverImages{
     width: 180px;
