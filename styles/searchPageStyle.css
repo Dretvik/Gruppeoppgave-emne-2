@@ -1,0 +1,25 @@
+#searchResultDiv{
+    display: grid;
+    width: 90vw;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 2vw;
+  }
+  .movieCards {
+    border: 1px solid white;
+    width: 200px;
+    height: 620px;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(43, 43, 43);
+    word-wrap: break-word;
+    overflow: auto;
+  }
+  .movieTitles {
+    height: 90px;
+  }
+  .movieVariableText {
+    color: tomato;
+  }
+  .searchInfoH1 {
+    color: antiquewhite;
+  }
