@@ -1,7 +1,9 @@
 function profilePageView() {
     const user = model.app.loggedInUser;
     const favMovies = user.favMovies;
+    const favGenre = user.favGenre;
     const movieList = generateFavMovieList(favMovies);
+    const genreList = generateFavGenreList (favGenre);
     document.getElementById('app').innerHTML = menuButtonAndSearchBar + /*HTML*/`
     <button onclick="editProfilePageView()" class="editProfileButtons">Edit Profile Info</button>
     <h2>Hi <span class="usernameProfilePage">${user.displayName}</span>! Welcome to your profile page.</h2>
@@ -23,7 +25,7 @@ function profilePageView() {
         </div>
         <div class="profilePageGridAreaB"> 
             <h2>My favorite genre:</h2>
-            <div class="personalInfoContainers" id="favGenreProfilePage"> ${user.favGenre}</div>
+            <div class="personalInfoContainers" id="favGenreProfilePage"> ${genreList}</div>
         </div>
     </div>
   `;
@@ -72,6 +74,8 @@ function editProfilePageView() {
             <div class="personalInfoContainers">
                 <h2>My favorite genre:</h2>
                 <div id="favGenreProfilePage"> ${user.favGenre}</div>
+                <input type="text" id="favoriteGenreInput" placeholder="Enter favorite genre">
+                <button onclick="addFavoriteGenre()">Add Favorite Genre</button>
             </div>
         </div>
     `;

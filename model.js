@@ -109,7 +109,7 @@ const model = {
                 userName: 'Ellen',
                 password: '1234',
                 emailAdress: 'ellenbirgittea@getacademy.no',
-                favGenre: ['Fantasy', 'Crime', 'Adventure'],
+                favGenre: [],
                 favMovies: [],
                 myRatedMovies: [],
                 aboutMe: 'Part of the development team!',

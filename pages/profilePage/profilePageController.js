@@ -47,3 +47,29 @@ function generateFavMovieList(movieTitles) {
     return movieList;
 }
 
+function addFavoriteGenre() {
+    const genreInput = document.getElementById('favoriteGenreInput').value;
+    if (genreInput.trim() === '') {
+        alert('You have not entered a genre.');
+        return;
+    }
+
+    model.app.loggedInUser.favGenre.push (genreInput);
+    document.getElementById('favoriteGenreInput').value = '';
+}
+
+function generateFavGenreList(genres){
+    let genreList = '';
+    if (genres.length > 0) {
+        for (let genre of genres) {
+            genreList += `
+            <label for="${genre}">${genre}</label><br>
+        `;
+        }
+    } 
+    else {
+        genreList = "You haven't added any genres yet";
+    }
+    return genreList;
+}
+
