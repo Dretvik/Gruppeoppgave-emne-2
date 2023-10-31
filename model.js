@@ -21,7 +21,7 @@ const menuButtonAndSearchBar = /*HTML*/`
 
 const model = {
     app: {
-        loggedInUser: [],
+        loggedInUser: null,
         currentPage: 'loginPage',
         cinemaMode: true,
         pages: [
