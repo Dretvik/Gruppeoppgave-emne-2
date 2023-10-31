@@ -22,6 +22,7 @@ function loginPageView() {
     `; // Usikker på om errorMessage trenger å være med. Overskriften trenger ikke å være den som er nå.
     showTopFourMoviesLoginPageView();
 }
+
 function showTopFourMoviesLoginPageView(){
     const movies = model.data.movies.slice(); 
     let currentIndexOfMovies = 0;
@@ -30,13 +31,13 @@ function showTopFourMoviesLoginPageView(){
     const topFourMoviesDiv = document.getElementById('topFourMoviesDiv');
     topFourMoviesDiv.innerHTML = '';
 
-
     for (let i = 0; i < 4; i++) {
         const currentIndex = (currentIndexOfMovies + i) % movies.length;
         const movie = movies[currentIndex];
 
         const movieCard = document.createElement('div');
         movieCard.classList.add('showTopFourRatedMovies');
+        movieCard.addEventListener('click', () => {movieInfoPageView(movie.id)});
         movieCard.innerHTML = /*HTML*/ `
         <div class="movieCardsLoginPage" id=movieCard${movie.id}>
         <h2 class="topFourMovieTitles">${movie.title}</h2>
