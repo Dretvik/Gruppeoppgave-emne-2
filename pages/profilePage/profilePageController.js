@@ -3,6 +3,7 @@ function saveProfileInfo() {
     const newDescription = document.getElementById('editProfileDescriptionInput').value;
     const newName = document.getElementById('editProfileNameInput').value;
     const newImage = document.getElementById('imageInputField').value;
+    const newGenre = document.getElementById('favoriteGenreInput').value
 
     // Hvis ikke noe er valgt vil den ikke gjøre noen endringer
     if (newDescription.trim() !== '') {
@@ -14,11 +15,14 @@ function saveProfileInfo() {
     if (newName.trim() !== ''){
         user.displayName = newName;
     }
-    editProfileAddToFacMovie();
+    if (newGenre.trim() !== '') {
+        user.genre = newGenre;
+    }
+    editProfileAddToFavMovie();
     profilePageView();
 }
 
-function editProfileAddToFacMovie(){
+function editProfileAddToFavMovie(){
     const user = model.app.loggedInUser;
     const selectedMovies = [];
     const movieCheckboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -36,7 +40,7 @@ function generateFavMovieList(movieTitles) {
     let movieList = '';
     if (movieTitles.length > 0) {
         for (let movieTitle of movieTitles) {
-            movieList += `
+            movieList += /*HMTL*/`
             <label for="${movieTitle}">${movieTitle}</label><br>
         `;
         }
@@ -62,7 +66,7 @@ function generateFavGenreList(genres){
     let genreList = '';
     if (genres.length > 0) {
         for (let genre of genres) {
-            genreList += `
+            genreList += /*HTML*/`
             <label for="${genre}">${genre}</label><br>
         `;
         }

@@ -34,6 +34,8 @@ function profilePageView() {
 function editProfilePageView() {
     const user = model.app.loggedInUser;
     const movies = model.data.movies;
+    const favGenre = user.favGenre;
+    const genreList = generateFavGenreList (favGenre);
 
     let movieCheckboxes = '';
     for (let movie of movies) {
@@ -73,9 +75,8 @@ function editProfilePageView() {
             </div>
             <div class="personalInfoContainers">
                 <h2>My favorite genre:</h2>
-                <div id="favGenreProfilePage"> ${user.favGenre}</div>
-                <input type="text" id="favoriteGenreInput" placeholder="Enter favorite genre">
-                <button onclick="addFavoriteGenre()">Add Favorite Genre</button>
+                <div id="favGenreProfilePage"> ${genreList}</div>
+                <input type="text" id="favoriteGenreInput" placeholder="Enter favorite genre" onchange="addFavoriteGenre();editProfilePageView() ">
             </div>
         </div>
     `;
