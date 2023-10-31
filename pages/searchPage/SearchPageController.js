@@ -14,6 +14,10 @@ function performSearch() {
     } else {
         const filteredMovies = model.data.movies.filter(movie => movie.title.toLowerCase().includes(searchTerm));
         if (filteredMovies.length > 0) {
+            document.getElementById('app').innerHTML = menuButtonAndSearchBar + /*HTML*/`
+            <h4>Here a list of is all the movies that contains "<span class="movieVariableText">${searchInput.value}</span>" in the title:</h4>
+            <div id='searchResultDiv'></div>
+            `;
             displaySearchResultsPageView(filteredMovies);
         } else {
             document.getElementById('app').innerHTML = menuButtonAndSearchBar +/*HTML*/`
