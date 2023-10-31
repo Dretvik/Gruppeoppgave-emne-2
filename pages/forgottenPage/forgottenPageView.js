@@ -11,6 +11,7 @@ function forgotPassword() {
         </p>
 
         <button onclick="forgottenPassword()" id="forgottenButton">Send e-mail</button>
+        <button onclick="loginPageView()">Back</button>
     </div>
     `;
 }

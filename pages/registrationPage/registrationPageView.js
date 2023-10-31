@@ -18,6 +18,7 @@ function registrationPageView() {
         </p>
 
         <button onclick="registerUser()" id="submitButton">Register</button>
+        <button onclick="loginPageView()">Back</button>
     </div>
     `;
 }
