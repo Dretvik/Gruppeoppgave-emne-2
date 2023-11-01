@@ -1,6 +1,7 @@
 function mainPageView(){
     document.getElementById('app').innerHTML = menuButtonAndSearchBar + /*HTML*/`
     <div id="mainContainer1">
+    <h1>top rated</h1>
     <input type="radio" name="position" checked />
     <input type="radio" name="position" />
     <input type="radio" name="position" />
@@ -23,6 +24,7 @@ function mainPageView(){
 
 
     <div id="mainContainer2">
+    <h2>fav movies</h2>
     <input type="radio" name="position2" checked />
     <input type="radio" name="position2" />
     <input type="radio" name="position2" />

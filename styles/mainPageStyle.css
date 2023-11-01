@@ -7,6 +7,10 @@
   align-items: center;
   justify-items: center;
 }
+h1 {
+  
+  top: 200px;
+}
 
 header {
   grid-row: 1 / 2;
@@ -56,7 +60,7 @@ div.item img {
 input[type="radio"] {
   position: relative;
   z-index: 8; 
-  top: 130px;
+  top: 400px;
 }
 
 div.item:nth-of-type(1) {
@@ -132,13 +136,20 @@ input:nth-of-type(5):checked ~ main#carousel {
 /* Additional Carousel */
 
 #mainContainer2 {
-  height: 600px;
+ height: 600px;
   margin: 0;
   display: grid;
   grid-template-rows: 100px 1fr 500px 100px; 
   grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
   align-items: center;
   justify-items: center;
+}
+
+h2 {
+align-content: center;
+  position: absolute;
+  left: 590px;
+  top: 800px;
 }
 
 main#carousel2 {
@@ -175,6 +186,15 @@ div.item2 img {
   height: 100%;
   object-fit: cover;
 }
+
+input[name="position2"] {
+  position: relative;
+  z-index: 8; 
+  top: 130px;
+}
+
+
+
 
 input[name="position2"]:nth-of-type(1) {
   grid-column: 2 / 3;
