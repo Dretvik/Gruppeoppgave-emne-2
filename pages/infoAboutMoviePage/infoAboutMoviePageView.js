@@ -1,47 +1,63 @@
 
 function movieInfoPageView(movieId){
-    const movie = model.data.movies.find(movie => movie.id === movieId);
-    const isRatedByUser = movie.personalRating ? movie.personalRating +'/1000' : 'No personal rating yet';
+    model.app.currentPage = model.app.pages[3]; // moviePage
 
-    app.innerHTML = menuButtonAndSearchBar + /*HTML*/`
-    <div id="movieInfoButtonsDiv">
-        <button class="movieInfoButtons" onclick="showRatingInput(${movie.id})">Rate Movie</button>
-    </div>
+    const movie = model.data.movies.find(movie => movie.id === movieId);
+    const backButton = /*HTML*/`<button class="movieInfoBackButton" onclick="loginPageView()">Back</button>`;
+
+    const movieInfoPageViewTopHTML = /*HTML*/`
     <div id="isFavoriteInfoDiv"></div>
     <div id="isPersonallyRatedDiv"></div>
     <div id="movieInfoContainer">
     <h1>${movie.title}</h1>
     <img src="${movie.cover}" id="movieInfoCoverImage">
     <h4 class="movieInfoH4 movieVariableText">Info about ${movie.title}:</h4>
-        <div class="movieInformationContainer">
-            <span class="movieInfoAreaA movieVariableText">Genre:</span>
-            <span class="movieInfoAreaB">${movie.genre}</span>
-            <span class="movieInfoAreaA movieVariableText">Year of release:</span>
-            <span class="movieInfoAreaB">${movie.releaseDate}</span>
-            <span class="movieInfoAreaA movieVariableText">Length of movie:</span>
-            <span class="movieInfoAreaB">${movie.duration}</span>
-            <span class="movieInfoAreaA movieVariableText">Overall Rating:</span>
-            <span class="movieInfoAreaB">${movie.overallRating}/1000</span>
-            <span class="movieInfoAreaA movieVariableText">Your Personal Rating:</span>
-            <span class="movieInfoAreaB"> ${isRatedByUser}</span>
-            <span class="movieInfoAreaA movieVariableText">Movie Description:</span>
-            <span class="movieInfoAreaB">${movie.description}</span>
+    <div class="movieInformationContainer">
+    <div class="movieInfoAreaA movieVariableText">Genre:</div>
+    <div class="movieInfoAreaB">${movie.genre}</div>
+    <div class="movieInfoAreaA movieVariableText">Year of release:</div>
+    <div class="movieInfoAreaB">${movie.releaseDate}</div>
+    <div class="movieInfoAreaA movieVariableText">Length of movie:</div>
+    <div class="movieInfoAreaB">${movie.duration}</div>
+    <div class="movieInfoAreaA movieVariableText">Overall Rating:</div>
+    <div class="movieInfoAreaB">${movie.overallRating}/1000</div>`;
+
+    const movieInfoPageViewBottomHTML = /*HTML*/`
+        <div class="movieInfoAreaA movieVariableText">Movie Description:</div>
+        <div class="movieInfoAreaB">${movie.description}</div>
         </div>
         <h4 class="movieInfoH4 movieVariableText">Top credirs</h4>
         <div class="movieInformationContainer">
-            <span class="movieInfoAreaA movieVariableText">Directors:</span>
-            <span class="movieInfoAreaB">${movie.directors}</span>
-            <span class="movieInfoAreaA movieVariableText">Actors:</span>
-            <span class="movieInfoAreaB">
+            <div class="movieInfoAreaA movieVariableText">Directors:</div>
+            <div class="movieInfoAreaB">${movie.directors}</div>
+            <div class="movieInfoAreaA movieVariableText">Actors:</div>
+            <div class="movieInfoAreaB">
                 ${movie.staringActors[0]}
                 <br>
                 ${movie.staringActors[1]}
                 <br>
                 ${movie.staringActors[2]}
-            </span>
+            </div>
         </div>
-    </div>
-    `;
+    </div>`;
+
+    if (model.app.loggedInUser != null) {
+        const isRatedByUser = movie.personalRating ? movie.personalRating +'/1000' : 'No personal rating yet';
+
+        app.innerHTML = menuButtonAndSearchBar + /*HTML*/`
+        <div id="movieInfoButtonsDiv">
+            <button class="movieInfoButtons" onclick="showRatingInput(${movie.id})">Rate Movie</button>
+        </div>`
+        + movieInfoPageViewTopHTML
+
+        + /*HTML*/`
+        <div class="movieInfoAreaA movieVariableText">Your Personal Rating:</div>
+        <div class="movieInfoAreaB"> ${isRatedByUser}</div>`
+
+        + movieInfoPageViewBottomHTML;
+    } else {
+        app.innerHTML = backButton + pageTitle + movieInfoPageViewTopHTML + movieInfoPageViewBottomHTML;
+    }
 }
 
 function showRatingInput(id) {

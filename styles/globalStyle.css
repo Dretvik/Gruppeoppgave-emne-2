@@ -1,3 +1,8 @@
+:root {
+  --button-background: indigo;
+  --button-hover: tomato;
+}
+
 body {
     background-color: black;
     color: white;
@@ -16,9 +21,9 @@ body {
   
   /* Style for the main menu button */
   .dropbtn {
-    background-color: #3498db;
+    background-color: var(--button-background);
     color: white;
-    box-shadow: 2px 1px orange;
+    /* box-shadow: 2px 1px orange; */
     border-radius: 10px;
     padding: 10px;
     border: none;
@@ -28,10 +33,10 @@ body {
     left: 40px;
   }
   .dropbtn:hover {
-    background-color: tomato;
+    background-color: var(--button-hover);
   }
   .searchButton:hover {
-    background-color: tomato;
+    background-color: var(--button-hover);
   }
   
   /* Style for the dropdown content (hidden by default) */
@@ -82,7 +87,7 @@ body {
     background-color: #1C00ff00;
   }
   .searchButton{
-    background-color: #3498db;
+    background-color: var(--button-background);
     color: white;
     border-radius: 10px;
     padding: 10px;
@@ -124,7 +129,7 @@ body {
     border: 1px solid orange;
 }
 .movieInfoButtons{
-  background-color: #3498db;
+  background-color: var(--button-background);
   color: white;
   border-radius: 10px;
   padding: 10px;
@@ -132,5 +137,23 @@ body {
   cursor: pointer;
 }
 .movieInfoButtons:hover {
-  background-color: tomato;
+  background-color: var(--button-hover);
+}
+
+/* Style for the Back button on the view movie page */
+.movieInfoBackButton {
+    position: fixed;
+    background-color: var(--button-background);
+    color: white;
+    border: none;
+    height: 40px;
+    width: 100px;
+    left: 40px;
+    top: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.movieInfoBackButton:hover {
+    background-color: var(--button-hover);
 }
