@@ -5,6 +5,13 @@ function movieInfoPageView(movieId){
     const movie = model.data.movies.find(movie => movie.id === movieId);
     const backButton = /*HTML*/`<button class="movieInfoBackButton" onclick="loginPageView()">Back</button>`;
 
+    // Format the genre view
+    let tempGenreView = movie.genre;
+
+    if (movie.genre.length > 1) {
+        tempGenreView = movie.genre.join(", ");
+    }
+    
     const movieInfoPageViewTopHTML = /*HTML*/`
     <div id="isFavoriteInfoDiv"></div>
     <div id="isPersonallyRatedDiv"></div>
@@ -14,7 +21,7 @@ function movieInfoPageView(movieId){
     <h4 class="movieInfoH4 movieVariableText">Info about ${movie.title}:</h4>
     <div class="movieInformationContainer">
     <div class="movieInfoAreaA movieVariableText">Genre:</div>
-    <div class="movieInfoAreaB">${movie.genre}</div>
+    <div class="movieInfoAreaB">${tempGenreView}</div>
     <div class="movieInfoAreaA movieVariableText">Year of release:</div>
     <div class="movieInfoAreaB">${movie.releaseDate}</div>
     <div class="movieInfoAreaA movieVariableText">Length of movie:</div>
