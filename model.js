@@ -1,6 +1,7 @@
 //Model
-const menuButtonAndSearchBar = /*HTML*/`
-    <h1>Turtle Movies</h1>
+const pageTitle = /*html*/`<h1>Turtle Movies</h1>`;
+
+const menuButtonAndSearchBar = pageTitle + /*HTML*/`
     <div class="dropdown">
     <button class="dropbtn">Menu</button>
     <div class="dropdown-content">
