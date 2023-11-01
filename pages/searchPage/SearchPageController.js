@@ -29,3 +29,14 @@ function performSearch() {
         }
     }
 }
+function generateFavMovieList(movieGenres) {
+    let genreList = '';
+    if (movieGenres.length > 0) {
+        for (let movieGenre of movieGenres) {
+            genreList += /*HTML*/`
+            <span>${movieGenre}</span>
+        `;
+        }
+    } 
+    return genreList;
+}

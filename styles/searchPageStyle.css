@@ -23,3 +23,7 @@
   .searchInfoH1 {
     color: antiquewhite;
   }
+  #genresDivSearchPage{
+    display: grid;
+    grid-template-columns: repeat(2,100px);
+  }

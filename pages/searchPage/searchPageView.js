@@ -1,6 +1,8 @@
 function displaySearchResultsPageView(movies) {
     movies.sort((a, b) => b.overallRating - a.overallRating);
     for (let movie of movies){
+        const movieGenre = movie.genre;
+        const genreList = generateFavMovieList(movieGenre);
         const isRatedByUser = movie.personalRating ?
          '<span class="movieVariableText">' + 'Your rating: '+ '</span>' + '<span>'+ movie.personalRating +'/1000'+'</span>' :
          '<span class="movieVariableText">' + 'No personal rating yet' + '</span>';
@@ -13,7 +15,7 @@ function displaySearchResultsPageView(movies) {
                 <div>${isRatedByUser}</div>
                 <br>
                 <div><span class="movieVariableText">Length:</span><span> ${movie.duration}</span></div>
-                <div><span class="movieVariableText">Genre:</span><span> ${movie.genre}</span></div>
+                <div><span class="movieVariableText">Genres:</span><div id="genresDivSearchPage">${genreList}</div></div>
             </div>
     `;
     }
@@ -22,6 +24,8 @@ function noResultSearchPageView() {
     const movies = model.data.movies.slice(); 
     movies.sort((a, b) => b.overallRating - a.overallRating);
     for (let movie of movies){
+        const movieGenre = movie.genre;
+        const genreList = generateFavMovieList(movieGenre);
         const isRatedByUser = movie.personalRating ?
         '<span class="movieVariableText">' + 'Your rating: '+ '</span>' + '<span>'+ movie.personalRating +'/1000'+'</span>' :
         '<span class="movieVariableText">' + 'No personal rating yet' + '</span>';
@@ -34,7 +38,7 @@ function noResultSearchPageView() {
                 <div>${isRatedByUser}</div>
                 <br>
                 <div><span class="movieVariableText">Length:</span><span> ${movie.duration}</span></div>
-                <div><span class="movieVariableText">Genre:</span><span> ${movie.genre}</span></div>
+                <div><span class="movieVariableText">Genres:</span><div id="genresDivSearchPage">${genreList}</div></div>
             </div>
     `;
     }
