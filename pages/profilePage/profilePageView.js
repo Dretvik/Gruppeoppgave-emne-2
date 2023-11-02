@@ -2,7 +2,9 @@ function profilePageView() {
     const user = model.app.loggedInUser;
     const favMovies = user.favMovies;
     const favGenre = user.favGenre;
-    const movieList = generateFavMovieList(favMovies);
+    const ratedMovies = user.myRatedMovies;
+    const ratedMoviesList = ratedMoviesOfUser(ratedMovies);
+    const movieList = generateFavoriteMovieList(favMovies);
     const genreList = generateFavGenreList (favGenre);
     document.getElementById('app').innerHTML = menuButtonAndSearchBar + /*HTML*/`
     <button onclick="editProfilePageView()" class="editProfileButtons">Edit Profile Info</button>
@@ -21,7 +23,7 @@ function profilePageView() {
         </div>
         <div class="profilePageGridAreaB">
             <h2>My rated movies:</h2>
-            <div class="personalInfoContainers" id="ratedMoviesProfilePage"> ${user.myRatedMovies}</div>
+            <div class="personalInfoContainers" id="ratedMoviesProfilePage"> ${ratedMoviesList}</div>
         </div>
         <div class="profilePageGridAreaB"> 
             <h2>My favorite genre:</h2>
@@ -36,12 +38,14 @@ function editProfilePageView() {
     const movies = model.data.movies;
     const favGenre = user.favGenre;
     const genreList = generateFavGenreList (favGenre);
+    const ratedMovies = user.myRatedMovies;
+    const ratedMoviesList = ratedMoviesOfUser(ratedMovies);
 
     let movieCheckboxes = '';
     for (let movie of movies) {
         movieCheckboxes += `
-            <input type="checkbox" id="${movie.title}" value="${movie.title}" ${
-                user.favMovies.includes(movie.title) ? 'checked' : ''
+            <input type="checkbox" id="${movie.title}" value="${movie.id}" ${
+                user.favMovies.some(favMovie => favMovie.id === movie.id) ? 'checked' : ''
             }>
             <label for="${movie.title}">${movie.title}</label><br>
         `;
@@ -71,7 +75,7 @@ function editProfilePageView() {
             </div>
             <div class="personalInfoContainers">
                 <h2>My rated movies:</h2>
-                <div id="ratedMoviesProfilePage"> ${user.myRatedMovies}</div>
+                <div id="ratedMoviesProfilePage"> ${ratedMoviesList}</div>
             </div>
             <div class="personalInfoContainers">
                 <h2>My favorite genre:</h2>

@@ -9,6 +9,7 @@ function submitMovieRating(id) {
         const movieId = id; 
         const movie = model.data.movies.find(movie => movie.id === movieId);
         movie.personalRating = rating; 
+        model.app.loggedInUser.myRatedMovies.push(movie);
 
         movieInfoPageView(movieId);
     }

@@ -54,3 +54,6 @@
 .usernameProfilePage{
     color: red;
 }
+.favMoviesProfilePage {
+    cursor:pointer;
+}
