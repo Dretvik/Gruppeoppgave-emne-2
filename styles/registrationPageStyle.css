@@ -1,0 +1,31 @@
+.registerUser {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    text-align: right;
+    align-self: right;
+    padding-bottom: 15px;
+}
+
+.registerUserHeader {
+    text-align: center;
+}
+
+.registerUserGroup {
+    align-items: right;
+}
+
+#submitButton, #backButton {
+    align-self: center;
+    width: 100px;
+    color: white;
+    background-color: var(--button-background);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin: 4px;
+}
+
+#submitButton:hover, #backButton:hover {
+    background-color: var(--button-hover);
+}

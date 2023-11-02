@@ -1,24 +1,27 @@
 function registrationPageView() {
     document.getElementById('app').innerHTML = /*HTML*/`
-    <div id="registerUser">
-        <h3>Create an account</h3>
-        <p>
-            <label for="newUsernameInput">Username: </label>
-            <input type="text" id="newUsername" autofocus>
-        </p>
+    <div class="registerUser">
+        <div class="registerUserHeader">
+            <h3>Create an account</h3>
+        </div>
 
-        <p>
+        <div class="registerUserGroup">
+            <label for="newUsernameInput">Username: </label>
+            <input type="text" id="newUsername">
+        </div>
+        
+        <div class="registerUserGroup">
             <label for="newUserEmail">E-mail: </label>
             <input type="email" id="newEmail">
-        </p>
-
-        <p>
+        </div>
+        
+        <div class="registerUserGroup">
             <label for="newPasswordInput">Password: </label>
             <input type="text" id="newPassword">
-        </p>
+        </div>
+    </div>
 
         <button onclick="registerUser()" id="submitButton">Register</button>
-        <button onclick="loginPageView()">Back</button>
-    </div>
+        <button onclick="loginPageView()" id="backButton">Back</button>
     `;
 }
