@@ -1,0 +1,21 @@
+.forgottenUserPassword {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+#forgottenButton, #forgottenBackButton {
+    align-self: center;
+    width: 100px;
+    color: white;
+    background-color: var(--button-background);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin: 4px;
+}
+
+#forgottenButton:hover, #forgottenBackButton:hover {
+    background-color: var(--button-hover);
+}
