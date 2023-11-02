@@ -8,7 +8,7 @@ function loginPageView() {
     </div>
     <div class="inputGroup">
         <label class="loginPageLabel" for="password"> Password:</label>
-        <input class="loginPageInput" type="text" id="password" placeholder="Fill in your password">
+        <input class="loginPageInput" type="password" id="password" placeholder="Fill in your password">
     </div>
     <div id="loginPageButtonsDiv">
         <button class="loginPageButtons" onclick="userLogin()">Log in</button>
@@ -31,7 +31,7 @@ function showTopFourMoviesLoginPageView(){
     const topFourMoviesDiv = document.getElementById('topFourMoviesDiv');
     topFourMoviesDiv.innerHTML = '';
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
         const currentIndex = (currentIndexOfMovies + i) % movies.length;
         const movie = movies[currentIndex];
 

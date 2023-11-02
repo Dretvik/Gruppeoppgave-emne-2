@@ -10,10 +10,18 @@
     text-align: center;
     align-self: center;
     gap: 5px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 .loginPageButtons {
-    width: 100px;
+    width: 150px;
+    color: white;
+    background-color: var(--button-background);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+.loginPageButtons:hover {
+    background-color: var(--button-hover);
 }
 .inputGroup {
     display: flex;
