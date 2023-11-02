@@ -37,7 +37,7 @@ function editProfilePageView() {
     const user = model.app.loggedInUser;
     const movies = model.data.movies;
     const favGenre = user.favGenre;
-    const genreList = generateFavGenreList (favGenre);
+    const genreList = generateFavGenreList (favGenre, true);
     const ratedMovies = user.myRatedMovies;
     const ratedMoviesList = ratedMoviesOfUser(ratedMovies);
 

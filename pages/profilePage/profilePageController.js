@@ -84,12 +84,15 @@ function addFavoriteGenre() {
     document.getElementById('favoriteGenreInput').value = '';
 }
 
-function generateFavGenreList(genres){
+function generateFavGenreList(genres, isEditView){
     let genreList = '';
     if (genres.length > 0) {
         for (let genre of genres) {
             genreList += /*HTML*/`
-            <label for="${genre}">${genre}</label><br>
+            <div>
+                ${isEditView ? /*HTML*/`<button class="deleteGenreButtons" onclick="deleteGenre('${genre}')">Delete</button>` : ''}
+                <label for="${genre}">${genre}</label>
+            </div>
         `;
         }
     } 
@@ -99,3 +102,11 @@ function generateFavGenreList(genres){
     return genreList;
 }
 
+function deleteGenre(genre) {
+    const user = model.app.loggedInUser;
+    const index = user.favGenre.indexOf(genre);
+    if (index !== -1) {
+        user.favGenre.splice(index, 1);
+    }
+    editProfilePageView();
+}
