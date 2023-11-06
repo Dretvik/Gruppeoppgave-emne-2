@@ -36,7 +36,6 @@ main#carousel {
   --items: 5;
   --midle: 3;
   --position: 1;
-  pointer-events: none;
 }
 
 div.item {
@@ -167,7 +166,6 @@ main#carousel2 {
   --items: 5;
   --midle: 3;
   --position: 1;
-  pointer-events: none;
 }
 
 div.item2 {
