@@ -5,7 +5,7 @@ function performSearch() {
     const movies = model.data.movies.slice(); 
     movies.sort((a, b) => b.overallRating - a.overallRating);
 
-    // Use a temp menu bar setup base on user login
+    // Use a temp menu bar setup based on user login
     let tempSearchPageMenuBar = menuButtonAndSearchBar;
 
     if (model.app.loggedInUser == null) {
