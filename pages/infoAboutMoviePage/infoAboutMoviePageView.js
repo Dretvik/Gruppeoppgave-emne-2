@@ -33,7 +33,7 @@ function movieInfoPageView(movieId){
         <div class="movieInfoAreaA movieVariableText">Movie Description:</div>
         <div class="movieInfoAreaB">${movie.description}</div>
         </div>
-        <h4 class="movieInfoH4 movieVariableText">Top credirs</h4>
+        <h4 class="movieInfoH4 movieVariableText">Top credits</h4>
         <div class="movieInformationContainer">
             <div class="movieInfoAreaA movieVariableText">Directors:</div>
             <div class="movieInfoAreaB">${movie.directors}</div>
