@@ -1,5 +1,5 @@
 function loginPageView() {
-    document.getElementById('app').innerHTML = /*HTML*/`
+    document.getElementById('app').innerHTML = searchBar + /*HTML*/`
 <div class="loginContainer">
     <h1>Welcome to PowerTurtle's rating page for movies!</h1>
     <div class="inputGroup">

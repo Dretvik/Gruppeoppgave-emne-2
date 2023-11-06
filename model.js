@@ -1,6 +1,14 @@
 //Model
 const pageTitle = /*html*/`<h1>Turtle Movies</h1>`;
 
+const backButton = /*HTML*/`<button class="movieInfoBackButton" onclick="loginPageView()">Back to login</button>`;
+
+const searchBar = /*html*/`
+<div class="searchDiv">
+<input type="text" id="searchInput" placeholder="Search for Movie Titles...">
+<button class="searchButton" onclick="performSearch()">Search</button>
+</div>`;
+
 const menuButtonAndSearchBar = pageTitle + /*HTML*/`
     <div class="dropdown">
     <button class="dropbtn">Menu</button>
@@ -11,14 +19,7 @@ const menuButtonAndSearchBar = pageTitle + /*HTML*/`
         <button onclick="userLogout()">Logout</button>
         <!-- Add more buttons here if needed -->
     </div>
-    </div>
-
-    <!--Search for title function -->
-    <div class="searchDiv">
-    <input type="text" id="searchInput" placeholder="Search for Movie Titles...">
-    <button class="searchButton" onclick="performSearch()">Search</button>
-    </div>
-`;
+    </div>` + searchBar;
 
 const model = {
     app: {
@@ -57,14 +58,14 @@ const model = {
         users:[
             {
                 id: 1,
-                displayName: 'Martini',
+                displayName: 'Martin',
                 userName: 'Martin',
                 password: 'shaken',
                 emailAdress: 'martini@getacademy.no',
-                favGenre: ['Adventure','Fantasy',],
-                favMovies: ['The Dukes of Hazzard','The Grudge (2004)',],
-                myRatedMovies: ['The Dukes of Hazzard','The Grudge (2004)',],
-                aboutMe: 'Jeg liker Martini!',     
+                favGenre: [],
+                favMovies: [],
+                myRatedMovies: [],
+                aboutMe: '',
                 profileImage: './img/profileImages/emptyUser.jpg',
 
             },

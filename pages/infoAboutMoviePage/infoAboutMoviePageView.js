@@ -3,7 +3,6 @@ function movieInfoPageView(movieId){
     model.app.currentPage = model.app.pages[3]; // moviePage
 
     const movie = model.data.movies.find(movie => movie.id === movieId);
-    const backButton = /*HTML*/`<button class="movieInfoBackButton" onclick="loginPageView()">Back</button>`;
 
     // Format the genre view
     let tempGenreView = movie.genre;
@@ -63,7 +62,7 @@ function movieInfoPageView(movieId){
 
         + movieInfoPageViewBottomHTML;
     } else {
-        app.innerHTML = backButton + pageTitle + movieInfoPageViewTopHTML + movieInfoPageViewBottomHTML;
+        app.innerHTML = backButton + pageTitle + searchBar + movieInfoPageViewTopHTML + movieInfoPageViewBottomHTML;
     }
 }
 
