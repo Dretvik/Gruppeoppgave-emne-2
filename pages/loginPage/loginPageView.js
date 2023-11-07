@@ -17,35 +17,35 @@ function loginPageView() {
     </div>
     <div id="errorMessage"></div>
     <p>Top Rated Movies:</p>
-    <div id="topFourMoviesDiv"></div>
+    <div id="topRatedMoviesDiv"></div>
 </div>
-    `; // Usikker på om errorMessage trenger å være med. Overskriften trenger ikke å være den som er nå.
-    showTopFourMoviesLoginPageView();
+    `;
+    showTopRatedMoviesLoginPageView();
 }
 
-function showTopFourMoviesLoginPageView(){
+function showTopRatedMoviesLoginPageView(){
     const movies = model.data.movies.slice(); 
     let currentIndexOfMovies = 0;
     movies.sort((a, b) => b.overallRating - a.overallRating);
 
-    const topFourMoviesDiv = document.getElementById('topFourMoviesDiv');
-    topFourMoviesDiv.innerHTML = '';
+    const topRatedMoviesDiv = document.getElementById('topRatedMoviesDiv');
+    topRatedMoviesDiv.innerHTML = '';
 
     for (let i = 0; i < 6; i++) {
         const currentIndex = (currentIndexOfMovies + i) % movies.length;
         const movie = movies[currentIndex];
 
         const movieCard = document.createElement('div');
-        movieCard.classList.add('showTopFourRatedMovies');
+        // movieCard.classList.add('showTopRatedRatedMovies');
         movieCard.addEventListener('click', () => {movieInfoPageView(movie.id)});
         movieCard.innerHTML = /*HTML*/ `
         <div class="movieCardsLoginPage" id=movieCard${movie.id}>
-        <h2 class="topFourMovieTitles">${movie.title}</h2>
+        <h2 class="topRatedMovieTitles">${movie.title}</h2>
         <img src="${movie.cover}" class="coverImages">
         <br>
         <div><span class=infoSpanLoginPage>Rating: </span><span class="movieInfoSpanLoginPage">${movie.overallRating}/1000</span></div>
         </div>
         `;
-        topFourMoviesDiv.appendChild(movieCard);
+        topRatedMoviesDiv.appendChild(movieCard);
     }
 }
