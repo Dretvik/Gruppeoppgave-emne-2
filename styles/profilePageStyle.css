@@ -45,7 +45,8 @@
     background-color: #f8f8f8;
     resize: none;
 }
-#editFavMoviesProfilePage{
+#editFavMoviesProfilePage, #editFavGenreProfilePage{
+    margin-left: 50px;
     height: 150px;
     overflow: auto;
     text-align: start;
@@ -53,6 +54,6 @@
 .usernameProfilePage{
     color: red;
 }
-.favMoviesProfilePage {
+.favMoviesProfilePage, .favGenresProfilePage {
     cursor:pointer;
 }

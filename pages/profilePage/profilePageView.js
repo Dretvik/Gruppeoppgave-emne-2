@@ -36,8 +36,6 @@ function profilePageView() {
 function editProfilePageView() {
     const user = model.app.loggedInUser;
     const movies = model.data.movies;
-    const favGenre = user.favGenre;
-    const genreList = generateFavGenreList (favGenre, true);
     const ratedMovies = user.myRatedMovies;
     const ratedMoviesList = ratedMoviesOfUser(ratedMovies);
 
@@ -79,9 +77,9 @@ function editProfilePageView() {
             </div>
             <div class="personalInfoContainers">
                 <h2>My favorite genre:</h2>
-                <div id="favGenreProfilePage"> ${genreList}</div>
-                <input type="text" id="favoriteGenreInput" placeholder="Enter favorite genre" onchange="addFavoriteGenre();editProfilePageView() ">
+                <div id="editFavGenreProfilePage"></div>
             </div>
         </div>
     `;
+    displayGenresAndAllowSelection();
 }

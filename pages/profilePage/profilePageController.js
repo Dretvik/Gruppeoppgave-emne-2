@@ -3,7 +3,6 @@ function saveProfileInfo() {
     const newDescription = document.getElementById('editProfileDescriptionInput').value;
     const newName = document.getElementById('editProfileNameInput').value;
     const newImage = document.getElementById('imageInputField').value;
-    const newGenre = document.getElementById('favoriteGenreInput').value
 
     // Hvis ikke noe er valgt vil den ikke gjøre noen endringer
     if (newDescription.trim() !== '') {
@@ -15,9 +14,7 @@ function saveProfileInfo() {
     if (newName.trim() !== ''){
         user.displayName = newName;
     }
-    if (newGenre.trim() !== '') {
-        user.genre = newGenre;
-    }
+
     editProfileAddToFavMovie();
     profilePageView();
 }
@@ -73,25 +70,13 @@ function ratedMoviesOfUser(ratedMovies) {
     return ratedMovieList;
 }
 
-function addFavoriteGenre() {
-    const genreInput = document.getElementById('favoriteGenreInput').value;
-    if (genreInput.trim() === '') {
-        alert('You have not entered a genre.');
-        return;
-    }
-
-    model.app.loggedInUser.favGenre.push (genreInput);
-    document.getElementById('favoriteGenreInput').value = '';
-}
-
-function generateFavGenreList(genres, isEditView){
+function generateFavGenreList(genres){
     let genreList = '';
     if (genres.length > 0) {
         for (let genre of genres) {
             genreList += /*HTML*/`
             <div>
-                ${isEditView ? /*HTML*/`<button class="deleteGenreButtons" onclick="deleteGenre('${genre}')">Delete</button>` : ''}
-                <label for="${genre}">${genre}</label>
+                <label class="favGenresProfilePage" onclick="showMoviesByGenre('${genre}')">${genre}</label>
             </div>
         `;
         }
@@ -102,11 +87,85 @@ function generateFavGenreList(genres, isEditView){
     return genreList;
 }
 
-function deleteGenre(genre) {
+function extractMovieGenres() {
+    const movieGenres = [];
+    model.data.movies.forEach(movie => {
+        movie.genre.forEach(genre => {
+            if (!movieGenres.includes(genre)) {
+                movieGenres.push(genre);
+            }
+        });
+    });
+    return movieGenres;
+}
+
+function displayGenresAndAllowSelection() {
+    const allMovieGenres = extractMovieGenres();
+    const genreList = document.getElementById('editFavGenreProfilePage');
     const user = model.app.loggedInUser;
-    const index = user.favGenre.indexOf(genre);
-    if (index !== -1) {
-        user.favGenre.splice(index, 1);
+
+    allMovieGenres.forEach(genre => {
+        const genreCheckbox = document.createElement('input');
+        genreCheckbox.type = 'checkbox';
+        genreCheckbox.value = genre;
+        genreCheckbox.id = `genre-${genre}`;
+        genreCheckbox.checked = user.favGenre.includes(genre);
+        genreCheckbox.addEventListener('change', function (event) {
+            if (event.target.checked) {
+                user.favGenre.push(genre);
+            } else {
+                const index = user.favGenre.indexOf(genre);
+                if (index !== -1) {
+                    user.favGenre.splice(index, 1);
+                }
+            }
+        });
+
+        const genreLabel = document.createElement('label');
+        genreLabel.htmlFor = `genre-${genre}`;
+        genreLabel.textContent = genre;
+
+        genreList.appendChild(genreCheckbox);
+        genreList.appendChild(genreLabel);
+        genreList.appendChild(document.createElement('br'));
+    });
+}
+ 
+function generateGenreMovieList(movies) {
+    let movieList = '';
+    if (movies.length > 0) {
+        for (let movie of movies) {
+            const movieGenre = movie.genre;
+            const genreList = generateFavMovieList(movieGenre);
+            const isRatedByUser = movie.personalRating ?
+            '<span class="movieVariableText">' + 'Your rating: '+ '</span>' + '<span>'+ movie.personalRating +'/1000'+'</span>' :
+            '<span class="movieVariableText">' + 'No personal rating yet' + '</span>';
+
+            movieList += /*HTML*/`
+            <div onclick="movieInfoPageView(${movie.id})" class="movieCards" id=movieCard${movie.id}>
+                <h2 class="movieTitles">${movie.title}</h2>
+                <img src="${movie.cover}" class="coverImages">
+                <p>Info about this movie:</p>
+                <div><span class="movieVariableText">Rating:</span><span> ${movie.overallRating}/1000</span></div>
+                <div>${isRatedByUser}</div>
+                <br>
+                <div><span class="movieVariableText">Length:</span><span> ${movie.duration}</span></div>
+                <div><span class="movieVariableText">Genres:</span><div id="genresDivSearchPage">${genreList}</div></div>
+            </div>
+            `;
+        }
     }
-    editProfilePageView();
+    return movieList;
+}
+
+function showMoviesByGenre(selectedGenre) {
+    const moviesWithGenre = model.data.movies.filter(movie => movie.genre.includes(selectedGenre));
+    const movieList = generateGenreMovieList(moviesWithGenre);
+
+    document.getElementById('app').innerHTML = menuButtonAndSearchBar + /*HTML*/`
+    <h2>Movies with genre: <span class="movieVariableText">"${selectedGenre}"</span>:</h2>
+    <div id="searchResultDiv">
+        ${movieList}
+    </div>
+    `;
 }
