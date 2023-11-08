@@ -34,7 +34,7 @@ function mainPageView(){
 
 
     <div id="mainContainer2">
-    <h2 id="h2Realese Date">release Date</h2>
+    <h1 id="h2RealeseDate">Release Date</h1>
     <input type="radio" name="position2" checked />
     <input type="radio" name="position2" />
     <input type="radio" name="position2" />
@@ -55,8 +55,7 @@ function mainPageView(){
       </main>
     </div>
     <div id="mainContainer3">
-<main id="carousel3">
-<h3 id="h3MainPage"></h3>
+    <h1 id="h3MainPage">Alpabethic</h1>
     <input type="radio" name="position3" checked />
     <input type="radio" name="position3" />
     <input type="radio" name="position3" />

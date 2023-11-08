@@ -9,7 +9,9 @@
 }
 #h1MainPage {
   
-  top: 200px;
+  position: relative;
+  margin-left: auto;
+  top: 160px;
 }
 
 header {
@@ -36,6 +38,7 @@ main#carousel {
   --items: 5;
   --midle: 3;
   --position: 1;
+  user-select: none;
 }
 
 div.item {
@@ -166,6 +169,7 @@ main#carousel2 {
   --items: 5;
   --midle: 3;
   --position: 1;
+  user-select: none;
 }
 
 div.item2 {
@@ -257,7 +261,7 @@ input[name="position2"]:nth-of-type(5):checked ~ main#carousel2 {
    position: absolute;
    margin-left: auto;
    margin-left: auto;
-   top: 800px;
+   top: 1460px;
  }
  
  main#carousel3 {
@@ -275,6 +279,7 @@ input[name="position2"]:nth-of-type(5):checked ~ main#carousel2 {
    --midle: 3;
    --position: 1;
    margin-left: -70px;
+   user-select: none;
  }
  
  div.item3 {
@@ -299,7 +304,6 @@ input[name="position2"]:nth-of-type(5):checked ~ main#carousel2 {
    position: relative;
    z-index: 8; 
    top: 200px;
-   left: 750px;
    margin-right: 15px;
  }
  
@@ -350,5 +354,10 @@ input[name="position2"]:nth-of-type(5):checked ~ main#carousel2 {
  input[name="position3"]:nth-of-type(5):checked ~ main#carousel3 {
    --position: 5;
  }
- 
+ #h2RealeseDate {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 860px;
+ }
 
