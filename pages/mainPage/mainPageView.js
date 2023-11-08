@@ -55,7 +55,7 @@ function mainPageView(){
       </main>
     </div>
     <div id="mainContainer3">
-    <h1 id="h3MainPage">Alpabethic</h1>
+    <h1 id="h3MainPage">Alphabetic</h1>
     <input type="radio" name="position3" checked />
     <input type="radio" name="position3" />
     <input type="radio" name="position3" />
