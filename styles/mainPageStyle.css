@@ -278,7 +278,6 @@ input[name="position2"]:nth-of-type(5):checked ~ main#carousel2 {
    --items: 5;
    --midle: 3;
    --position: 1;
-   margin-left: -70px;
    user-select: none;
  }
  
