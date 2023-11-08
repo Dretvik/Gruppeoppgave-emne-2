@@ -31,10 +31,10 @@ function mainPageView(){
       </main>
     </div>
 
-// second carousel
+
 
     <div id="mainContainer2">
-    <h2 id="h2Realese Date">Fav movies</h2>
+    <h2 id="h2Realese Date">release Date</h2>
     <input type="radio" name="position2" checked />
     <input type="radio" name="position2" />
     <input type="radio" name="position2" />
